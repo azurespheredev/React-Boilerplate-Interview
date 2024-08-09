@@ -33,7 +33,7 @@ const Part1Component: React.FC = () => {
       </Button>
 
       <ProgressBar progress={progress} />
-      <div className="text-center text-sm text-gray-700 mt-2">Progress: {progress}%</div>
+      <div className="text-center text-sm text-gray-700 mt-2">{`Progress: ${progress}%`}</div>
     </Box>
   );
 };

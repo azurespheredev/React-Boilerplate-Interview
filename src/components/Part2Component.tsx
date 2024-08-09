@@ -10,6 +10,10 @@ const Part2Component: React.FC = () => {
     setBars((prevBars) => [...prevBars, 0]);
   };
 
+  const removeProgressBars = (): void => {
+    setBars([]);
+  };
+
   const updateProgress = (index: number): void => {
     const progressInterval = setInterval(() => {
       setBars((prevBars) => {
@@ -37,13 +41,23 @@ const Part2Component: React.FC = () => {
     <Box>
       <Typography variant="h4">{"Part Two"}</Typography>
 
-      <Button
-        variant="contained"
-        className="my-4"
-        onClick={addProgressBar}
-      >
-        {"Add Bar"}
-      </Button>
+      <Box className="flex gap-2">
+        <Button
+          variant="contained"
+          className="my-4"
+          onClick={addProgressBar}
+        >
+          {"Add Bar"}
+        </Button>
+
+        <Button
+          variant="contained"
+          className="my-4"
+          onClick={removeProgressBars}
+        >
+          {"Remove Bars"}
+        </Button>
+      </Box>
 
       {bars.map((progress: number, index: number) => (
         <Box key={index} className="flex flex-col items-center w-full mb-4">
